@@ -15,7 +15,7 @@ Quick start
 
 .. code-block::
 
-    pip install django_admin_sbf
+    pip install django-admin-sbf
 
 2. Add "django_admin_sbf" to your INSTALLED_APPS setting like this::
 
