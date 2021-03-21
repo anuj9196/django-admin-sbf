@@ -52,12 +52,9 @@ class DjangoAdminSBF(ModelAdmin):
             return "%s__icontains" % field_name
 
         query_field_params = request.GET.get('f', None)
-        print('query_params_________: {}'.format(query_field_params))
 
         use_distinct = False
         search_fields = self.get_search_fields(request)
-        print('search_fields________: {}'.format(search_fields))
-        print('search term__________: {}'.format(search_term))
         if search_fields and search_term and query_field_params in search_fields:
             # orm_lookups = [construct_search(str(search_field))
             #                for search_field in search_fields]
@@ -68,6 +65,4 @@ class DjangoAdminSBF(ModelAdmin):
                 queryset = queryset.filter(reduce(operator.or_, or_queries))
             use_distinct |= any(lookup_needs_distinct(self.opts, search_spec) for search_spec in orm_lookups)
 
-        # traceback.print_stack()
-        # return super().get_search_results(request, queryset, search_term)
         return queryset, use_distinct
