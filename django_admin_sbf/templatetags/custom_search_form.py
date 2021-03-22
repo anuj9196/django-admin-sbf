@@ -4,7 +4,7 @@ from django import template
 register = template.Library()
 
 
-@register.inclusion_tag('admin/custom_search_form.html', takes_context=False)
+@register.inclusion_tag('admin/sbf_custom_search_form.html', takes_context=False)
 def advanced_search_form(cl):
     """
     Displays a search form for searching the list.

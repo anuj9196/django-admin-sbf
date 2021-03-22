@@ -13,7 +13,7 @@ class DjangoAdminSBF(ModelAdmin):
     Extend this class to add advanced search in the admin panel
     """
 
-    change_list_template = 'admin/custom_change_list.html'
+    change_list_template = 'admin/sbf_custom_change_list.html'
 
     def get_changelist(self, request, **kwargs):
         from .admin_forms import CustomChangeList
